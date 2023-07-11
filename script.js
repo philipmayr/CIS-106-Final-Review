@@ -623,7 +623,7 @@ let questions = [
     },
     {
         question: "A parameter supplied by the caller can be affected by actions within the called function is known as call by _____.",
-        answers: ["by reference"]
+        answers: ["reference"]
     },
     {
         question: "IPO in computer programming refers to the _____ model.",
