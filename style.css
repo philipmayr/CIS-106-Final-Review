@@ -1,0 +1,128 @@
+* {
+    text-align:center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #03254c;
+}
+
+.app{
+    background: #fff;
+    width: 70%;
+    max-width: 500px;
+    margin: 120px auto 0;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.app h1{
+    font-weight: 15px;
+    color: #03254c;
+    font-weight: 600;
+    border-bottom: 1px solid #03254c;
+    padding-bottom: 30px;
+}
+
+.quiz{
+    padding: 20px 0;
+}
+
+.quiz h2{
+    font-size: 16px;
+    color: #03254c;
+    font-weight: 600;
+}
+
+.btn{
+    background: #fff;
+    color: #03254c;
+    font-weight: 500;
+    width: 66.6%;
+    border: 1px solid #03254c;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+#check-btn:not([disabled]){
+    background: #03254c;
+    color: #fff;
+    font-weight: 500;
+    width: 120px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+#input{
+    background: #fff;
+    color: #03254c;
+    font-weight: 500;
+    border: 2px solid #03254c;
+    width: 33.3%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 4px;
+    display: none;
+}
+
+#input:disabled{
+    border: 2px solid #008000;
+    color: #008000;
+}
+
+.btn:hover:not([disabled]){
+    background: #03254c;
+    color: #fff;
+}
+ 
+.btn:disabled{
+    cursor: default;
+}
+
+#next-btn{
+    background: #03254c;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+#hint-btn{
+    background: #03254c;
+    color: #fff;
+    font-weight: 500;
+    width: 80px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.correct{
+    background: #008000;
+    color: #fff;
+}
+
+.incorrect{
+    background: grey;
+    color: #03254c;
+}
