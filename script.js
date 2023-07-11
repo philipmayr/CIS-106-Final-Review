@@ -723,6 +723,8 @@ const nextButton = document.getElementById("next-btn");
 const input = document.getElementById("input");
 const checkButton = document.getElementById("check-btn");
 const hintButton = document.getElementById("hint-btn");
+const audio = new Audio('ping.mp3');
+audio.volume = 0.33;
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -785,6 +787,7 @@ function selectAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct;
     if(isCorrect){
+        audio.play();
         selectedBtn.classList.add("correct");
         score++;
     }else{
@@ -814,6 +817,7 @@ nextButton.addEventListener("click", () => {
 checkButton.addEventListener("click", () => {
     const isCorrect = input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[0].toLowerCase();
     if (isCorrect) {
+        audio.play();
         score++;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
