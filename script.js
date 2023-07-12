@@ -236,7 +236,10 @@ let questions = [
     },
     {
         question: "The first action in defining a do loop is test an expression.",
-        answers: ["false"]
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
     },
     {
         question: "An iteration control structure that places one loop inside another loop is known as _____.",
