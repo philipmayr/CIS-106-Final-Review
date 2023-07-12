@@ -804,7 +804,7 @@ nextButton.addEventListener("click", () => {
     input.disabled = false;
     checkButton.style.display = "none";
     input.style.display = "none";
-    if(currentQuestionIndex < questions.length){
+    if(currentQuestionIndex < 50){
         handleNextButton();
     }else{
         startQuiz();
@@ -868,7 +868,9 @@ hintButton.addEventListener("click", () => {
 });
 
 function showScore(){
+    nextButton.disabled = true;
     resetState();
+    nextButton.disabled = false;
     questionElement.innerHTML = `You got ${score} out of 50 questions right.`;
     questionCounter.innerHTML = "50 of 50 - All Done !";
     currentQuestionIndex = 0;
@@ -878,6 +880,10 @@ function showScore(){
 }
 
 function handleNextButton(){
+    if (nextButton.innerHTML == "Restart Review"){
+        startQuiz();
+        return;
+    }
     currentQuestionIndex++;
     if(currentQuestionIndex < 50){
         showQuestion();
