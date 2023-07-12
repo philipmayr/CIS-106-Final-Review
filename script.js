@@ -818,13 +818,13 @@ checkButton.addEventListener("click", () => {
     const isCorrect = input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[0].toLowerCase();
     if (isCorrect) {
         audio.play();
+        input.value = questions[currentQuestionIndex].answers[0];
         score++;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
         input.style.borderColor = '#008000';
         hintButton.style.display = "none";
         input.style.color = '#008000';
-        input.value = questions[currentQuestionIndex].answers[0];
         input.disabled = true;
         nextButton.focus();
     }else{
