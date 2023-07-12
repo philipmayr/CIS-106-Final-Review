@@ -36,7 +36,7 @@ let questions = [
     },
     {
         question: "The value of True AND True is _____.",
-        answers: ["true"]
+        answers: ["True"]
     },
     {
         question: "Evaluating a string literal containing one or more placeholders, yielding a result in which the placeholders are replaced with their corresponding values is _____.",
@@ -118,7 +118,7 @@ let questions = [
     },
     {
         question: "The value of False AND False is _____.",
-        answers: ["false"]
+        answers: ["False"]
     },
     {
         question: "The result of reversing the string &quot;Hello&quot; is _____.",
@@ -255,7 +255,7 @@ let questions = [
     },
     {
         question: "The value of True OR False is _____.",
-        answers: ["true"]
+        answers: ["True"]
     },
     {
         question: "_____ is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality.",
@@ -263,7 +263,7 @@ let questions = [
     },
     {
         question: "Incorrect output is the result of a _____ error.",
-        answers: ["logic error"]
+        answers: ["logic"]
     },
     {
         question: "_____ is a unary operator that adds one to the operand and uses the operand's original value.",
@@ -279,7 +279,7 @@ let questions = [
     },
     {
         question: "The value of True AND NOT True is _____.",
-        answers: ["false"]
+        answers: ["False"]
     },
     {
         question: "The code that describes what a function does is known as the _____.",
