@@ -623,7 +623,7 @@ let questions = [
     },
     {
         question: "A parameter supplied by the caller can be affected by actions within the called function is known as call by _____.",
-        answers: ["by reference"]
+        answers: ["reference"]
     },
     {
         question: "IPO in computer programming refers to the _____ model.",
@@ -818,6 +818,10 @@ checkButton.addEventListener("click", () => {
     const isCorrect = input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[0].toLowerCase();
     if (isCorrect) {
         audio.play();
+<<<<<<< HEAD
+=======
+        input.value = questions[currentQuestionIndex].answers[0];
+>>>>>>> 94c35b7d499de89348d5e6a7076a2bf36937979d
         score++;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
