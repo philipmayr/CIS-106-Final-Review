@@ -156,7 +156,7 @@ let questions = [
     },
     {
         question: "A function's communications declaration to a compiler is known as the _____.",
-        answers: ["function prototype"]
+        answers: ["prototype"]
     },
     {
         question: "The result of finding the first index of &quot;l&quot; in &quot;Hello&quot; is _____.",
