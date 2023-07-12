@@ -235,7 +235,7 @@ let questions = [
         answers: ["Efficiency"]
     },
     {
-        question: "The first action in defining a do loop is test an expression.",
+        question: "The first action in defining a do loop is to test an expression.",
         answers: [
             { text: "True", correct: false },
             { text: "False", correct: true }
@@ -497,7 +497,7 @@ let questions = [
         answers: ["standard library"]
     },
     {
-        question: "A programmer-readable explanation or annotation in the source code of a computer program is a ___",
+        question: "A programmer-readable explanation or annotation in the source code of a computer program is a _____.",
         answers: ["comment"]
     },
     {
@@ -696,28 +696,34 @@ let questions = [
         question: "A two-dimensional array element may be accessed using:",
         answers: ["array[row][column]"]
     },
-     /*
     {
-        question: "",
-        answers: [""]
+        question: "A unary operator that subtracts one from the operand and uses the operand's original value.",
+        answers: ["postfix decrement"]
     },
     {
-        question: "",
-        answers: [""]
+        question: "A unary operator that subtracts one from the operand and uses the operand's new value.",
+        answers: ["prefix decrement"]
     },
     {
-        question: "",
-        answers: [""]
+        question: "The first action in defining a while loop is:",
+        answers: ["initialize the flag"]
     },
     {
-        question: "",
-        answers: [""]
+        question: "An unstructured branching statement that causes the logic to jump to a different place in the program.",
+        answers: ["goto"]
     },
     {
-        question: "",
-        answers: [""]
+        question: "A test after loop typically used when the number of iterations is NOT known before entering the loop.",
+        answers: ["do"]
     },
-    */
+    {
+        question: "The last action in defining a do loop is:",
+        answers: ["test an expression"]
+    },
+    {
+        question: "Preferred programming style used to declare multiple variables in a function.",
+        answers: ["vertical alignment"]
+    }
 ];
 
 const questionElement = document.getElementById("question");
