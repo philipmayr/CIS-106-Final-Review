@@ -824,6 +824,7 @@ checkButton.addEventListener("click", () => {
         input.style.borderColor = '#008000';
         hintButton.style.display = "none";
         input.style.color = '#008000';
+        input.value = question[currentQuestionIndex].answers[0];
         input.disabled = true;
         nextButton.focus();
     }else{
