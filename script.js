@@ -731,11 +731,6 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz(){
-    x = 0;
-    for (const i of questions){
-        x++;
-        console.log(x);
-    }
     questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
     score = 0;
@@ -748,7 +743,7 @@ function showQuestion(){
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNum = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
+    questionElement.innerHTML = currentQuestion.question;
     
     if (currentQuestionIndex > 0){
         input.placeholder = "";
