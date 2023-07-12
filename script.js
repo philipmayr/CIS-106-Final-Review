@@ -282,7 +282,7 @@ let questions = [
         answers: ["false"]
     },
     {
-        question: "The code that descrbes what a function does is known as the _____.",
+        question: "The code that describes what a function does is known as the _____.",
         answers: ["function definition"]
     },
     {
