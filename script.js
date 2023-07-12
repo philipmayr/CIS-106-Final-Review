@@ -870,6 +870,7 @@ hintButton.addEventListener("click", () => {
 function showScore(){
     resetState();
     questionElement.innerHTML = `You got ${score} out of 50 questions right.`;
+    questionCounter.innerHTML = `50 of 50 - All Done !`;
     nextButton.innerHTML = "Restart Review";
     nextButton.style.display = "block";
     score = 0;
