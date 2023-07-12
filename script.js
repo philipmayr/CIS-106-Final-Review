@@ -398,7 +398,7 @@ let questions = [
         answers: ["float"]
     },
     {
-        question: "_____ describes an arithmetic operation which attempts to create a numeric value that is outside the range that can be represented with a given number of bits",
+        question: "_____ describes an arithmetic operation which attempts to create a numeric value that is outside the range that can be represented with a given number of bits.",
         answers: ["Overflow"]
     },
     {
