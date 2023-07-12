@@ -882,6 +882,7 @@ function showScore(){
 
 function handleNextButton(){
     if (nextButton.innerHTML == "Restart Review"){
+        currentQuestionIndex = 0;
         startQuiz();
         return;
     }
