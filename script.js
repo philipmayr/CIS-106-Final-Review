@@ -801,6 +801,7 @@ function selectAnswer(e){
 }
 
 nextButton.addEventListener("click", () => {
+    nextButton.innerHTML = "Next";
     input.disabled = false;
     checkButton.style.display = "none";
     input.style.display = "none";
