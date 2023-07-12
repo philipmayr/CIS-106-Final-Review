@@ -883,6 +883,10 @@ function showScore(){
 }
 
 function handleNextButton(){
+    if (nextButton.innerHTML == "Restart Review"){
+        startQuiz();
+        return;
+    }
     currentQuestionIndex++;
     if(currentQuestionIndex < 50){
         showQuestion();
