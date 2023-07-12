@@ -869,7 +869,7 @@ hintButton.addEventListener("click", () => {
 });
 
 function showScore(){
-    resetState();
+    // resetState();
     questionElement.innerHTML = `You got ${score} out of 50 questions right.`;
     questionCounter.innerHTML = "50 of 50 - All Done !";
     currentQuestionIndex = 0;
