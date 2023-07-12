@@ -530,7 +530,7 @@ let questions = [
     },
     {
         question: "The modulus operator is _____.",
-        answers: ["%d"]
+        answers: ["%"]
     },
     {
         question: "The addition operator is _____.",
