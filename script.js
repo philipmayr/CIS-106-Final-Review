@@ -736,6 +736,7 @@ function startQuiz(){
     score = 0;
     nextButton.innerHTML = "Next";
     hintButton.style.display = "none";
+    questionCounter.innerHTML = "1 of 50";
     showQuestion();
 }
 
@@ -870,21 +871,18 @@ hintButton.addEventListener("click", () => {
 
 function showScore(){
     nextButton.disabled = true;
+    questions.sort(() => Math.random() - 0.5);
     resetState();
     nextButton.disabled = false;
     questionElement.innerHTML = `You got ${score} out of 50 questions right.`;
     questionCounter.innerHTML = "50 of 50 - All Done !";
-    currentQuestionIndex = 0;
+    currentQuestionIndex = -1;
     nextButton.innerHTML = "Restart Review";
     nextButton.style.display = "block";
     score = 0;
 }
 
 function handleNextButton(){
-    if (nextButton.innerHTML == "Restart Review"){
-        startQuiz();
-        return;
-    }
     currentQuestionIndex++;
     if(currentQuestionIndex < 50){
         showQuestion();
