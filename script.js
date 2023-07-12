@@ -724,6 +724,7 @@ const input = document.getElementById("input");
 const checkButton = document.getElementById("check-btn");
 const hintButton = document.getElementById("hint-btn");
 const audio = new Audio('ping.mp3');
+const questionCounter = document.getElementById("question-counter")
 audio.volume = 0.33;
 
 let currentQuestionIndex = 0;
@@ -772,6 +773,7 @@ function showQuestion(){
 }
 
 function resetState(){
+    questionCounter.innerHTML = `${currentQuestionIndex + 1} of 50`;
     input.style.color = '#03254c';
     input.value = "";
     counter = 0;
@@ -818,10 +820,7 @@ checkButton.addEventListener("click", () => {
     const isCorrect = input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[0].toLowerCase();
     if (isCorrect) {
         audio.play();
-<<<<<<< HEAD
-=======
         input.value = questions[currentQuestionIndex].answers[0];
->>>>>>> 94c35b7d499de89348d5e6a7076a2bf36937979d
         score++;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
