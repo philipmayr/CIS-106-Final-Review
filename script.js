@@ -860,13 +860,18 @@ input.addEventListener("keyup", event => {
 });
 
 hintButton.addEventListener("click", () => {
-    if (counter < questions[currentQuestionIndex].answers[0].length){
+    const currentQuestion = questions[currentQuestionIndex].answers[0];
+    if (counter < currentQuestion.length){
         input.style.color = '#03254c';
-        hint += questions[currentQuestionIndex].answers[0][counter];
+        if (input.value.length > 0 && input.value.toLowerCase == currentQuestion.substring(0, input.value.length).toLowerCase){
+            hint = input.value + currentQuestion[input.value.length];
+        }else{
+            hint += currentQuestion[counter];
+        }
         input.value = hint;
         input.focus();
         counter++;
-        if (counter == questions[currentQuestionIndex].answers[0].length){
+        if (input.value == currentQuestion){
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
             checkButton.style.display = "none";
