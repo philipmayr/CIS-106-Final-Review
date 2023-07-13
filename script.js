@@ -389,7 +389,7 @@ let questions = [
         answers: ["Condition"]
     },
     {
-        question: "_____refers to the number of indicies needed to specify an element in an array.",
+        question: "_____ refers to the number of indicies needed to specify an element in an array.",
         answers: ["Dimensionality"]
     },
     {
@@ -723,7 +723,19 @@ let questions = [
     {
         question: "Preferred programming style used to declare multiple variables in a function.",
         answers: ["vertical alignment"]
-    }
+    },
+    {
+        question: "A parameter acts within the function as a new local variable initialized to the value of the argument.",
+        answers: ["call by value"]
+    },
+    {
+        question: "A special kind of variable used in a function to refer to one of the pieces of data provided as input to the function.",
+        answers: ["parameter"]
+    },
+    {
+        question: "_____ is a test before loop typically used when the number of iterations is NOT known before entering the loop.",
+        answers: ["While"]
+    },
 ];
 
 const questionElement = document.getElementById("question");
@@ -752,7 +764,6 @@ function startQuiz(){
 function showQuestion(){
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNum = currentQuestionIndex + 1;
     questionElement.innerHTML = currentQuestion.question;
     
     if (currentQuestionIndex > 0){
