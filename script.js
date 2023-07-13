@@ -871,7 +871,7 @@ hintButton.addEventListener("click", () => {
         input.value = hint;
         input.focus();
         counter++;
-        if (input.value == currentQuestion){
+        if (input.value.toLowerCase == currentQuestion.toLowerCase){
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
             checkButton.style.display = "none";
