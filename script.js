@@ -874,7 +874,7 @@ hintButton.addEventListener("click", () => {
     const currentQuestion = questions[currentQuestionIndex].answers[0];
     if (counter < currentQuestion.length){
         input.style.color = '#03254c';
-        if (input.value.length > 0 && input.value.length < currentQuestion.length && input.value.toLowerCase == currentQuestion.substring(0, input.value.length).toLowerCase){
+        if (input.value.length > 0 && input.value.length < currentQuestion.length + 1 && (input.value.toLowerCase() == currentQuestion.substring(0, input.value.length).toLowerCase())){
             hint = input.value + currentQuestion[input.value.length];
         }else{
             hint += currentQuestion[counter];
