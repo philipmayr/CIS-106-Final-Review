@@ -746,6 +746,7 @@ const checkButton = document.getElementById("check-btn");
 const hintButton = document.getElementById("hint-btn");
 const audio = new Audio('ping.mp3');
 const questionCounter = document.getElementById("question-counter")
+
 audio.volume = 0.33;
 
 let currentQuestionIndex = 0;
@@ -772,6 +773,8 @@ function showQuestion(){
 
     if (currentQuestion.answers.length === 1){
         input.style.display = "block";
+        input.style.color = '#03254c';
+        input.style.borderColor = '#03254c';
         input.focus();
         checkButton.style.display = "block";
     }else{
@@ -897,27 +900,27 @@ hintButton.addEventListener("click", () => {
 
 function showScore(){
     nextButton.disabled = true;
-    questions.sort(() => Math.random() - 0.5);
     resetState();
     nextButton.disabled = false;
     questionElement.innerHTML = `You got ${score} out of 50 questions right.`;
     questionCounter.innerHTML = "50 of 50 - All Done !";
-    currentQuestionIndex = -1;
     nextButton.innerHTML = "Restart Review";
     nextButton.style.display = "block";
+    questions.sort(() => Math.random() - 0.5);
+    currentQuestionIndex = -1;
     score = 0;
 }
 
 function handleNextButton(){
     if (nextButton.innerHTML == "Restart Review"){
         startQuiz();
-        return;
-    }
-    currentQuestionIndex++;
-    if(currentQuestionIndex < 50){
-        showQuestion();
     }else{
-        showScore();
+        currentQuestionIndex++;
+        if(currentQuestionIndex < 50){
+            showQuestion();
+        }else{
+            showScore();
+        }
     }
 }
 
