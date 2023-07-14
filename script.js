@@ -878,9 +878,20 @@ input.addEventListener("keyup", event => {
 
 hintButton.addEventListener("click", () => {
     const currentQuestion = questions[currentQuestionIndex].answers[0];
-    if (counter < currentQuestion.length){
+    if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()){
+        input.style.color = '#008000';
+        input.style.borderColor = '#008000';
+        input.value = questions[currentQuestionIndex].answers[0];
+        checkButton.style.display = "none";
+        nextButton.style.display = "block";
+        hintButton.style.display = "none";
+        nextButton.focus();
+        input.disabled = true;
+        score++;
+        return;
+    }else{
         if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
-            hint = input.value + currentQuestion[input.value.trim().length];
+            hint = input.value + currentQuestion[input.value.length];
         }else{
             hint += currentQuestion[counter];
         }
@@ -894,6 +905,7 @@ hintButton.addEventListener("click", () => {
             checkButton.style.display = "none";
             nextButton.style.display = "block";
             hintButton.style.display = "none";
+            nextButton.focus();
             input.disabled = true;
             score++;
         }
