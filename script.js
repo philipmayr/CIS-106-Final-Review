@@ -866,17 +866,19 @@ nextButton.addEventListener("keyup", event => {
 });
 
 input.addEventListener("keyup", event => {
-    if(event.key !== "Enter") return;
-        if (input.value != ""){
-            checkButton.click();  
-        }
+    if(event.key !== "Enter"){
+        input.style.color = '#03254c';
+        return;
+    }
+    if (input.value != ""){
+        checkButton.click();  
+    }
     event.preventDefault();
 });
 
 hintButton.addEventListener("click", () => {
     const currentQuestion = questions[currentQuestionIndex].answers[0];
     if (counter < currentQuestion.length){
-        input.style.color = '#03254c';
         if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
             hint = input.value + currentQuestion[input.value.trim().length];
         }else{
