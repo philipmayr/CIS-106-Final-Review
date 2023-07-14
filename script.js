@@ -874,17 +874,18 @@ hintButton.addEventListener("click", () => {
     const currentQuestion = questions[currentQuestionIndex].answers[0];
     if (counter < currentQuestion.length){
         input.style.color = '#03254c';
-        if (input.value.length > 0 && input.value.length < currentQuestion.length + 1 && (input.value.toLowerCase() == currentQuestion.substring(0, input.value.length).toLowerCase())){
-            hint = input.value + currentQuestion[input.value.length];
+        if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
+            hint = input.value + currentQuestion[input.value.trim().length];
         }else{
             hint += currentQuestion[counter];
         }
         input.value = hint;
         input.focus();
         counter++;
-        if (input.value.toLowerCase() == currentQuestion.toLowerCase()){
+        if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()){
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
+            input.value = questions[currentQuestionIndex].answers[0];
             checkButton.style.display = "none";
             nextButton.style.display = "block";
             hintButton.style.display = "none";
