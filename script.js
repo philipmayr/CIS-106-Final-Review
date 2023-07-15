@@ -736,6 +736,123 @@ let questions = [
         question: "_____ is a test before loop typically used when the number of iterations is NOT known before entering the loop.",
         answers: ["While"]
     },
+    {
+        question: "A technique for arranging complexity of computer systems so that functionality may be separated from specific implementation details.",
+        answers: ["abstraction"]
+    },
+    {
+        question: "_____ is NOT a phase in the Systems Development Life Cycle.",
+        answers: ["Testing"]
+    },
+    {
+        question: "Subtraction operator.",
+        answers: ["-"]
+    },
+    {
+        question: "The standard output device.",
+        answers: ["monitor"]
+    },
+    {
+        question: "True OR True",
+        answers: ["True"]
+    },
+    {
+        question: "Release access to a file.",
+        answers: ["close"]
+    },
+    {
+        question: "The result of splitting &quot; Hello world&quot; using &quot &quot.",
+        answers: ["[&quotHello&quot, &quotworld&quot]"]
+    },
+    {
+        question: "A data structure consisting of a collection of elements (values or variables), each identified by at least one index.",
+        answers: ["array"]
+    },
+    {
+        question: "A random access, variable-size data structure that allows elements to be added or removed.",
+        answers: ["dynamic array"]
+    },
+    {
+        question: "Causes execution to leave the current function and resume at the point in the code immediately after where the function was called.",
+        answers: ["return statement"]
+    },
+    {
+        question: "Used to delineate a string literal.",
+        answers: ["&quot;"]
+    },
+    {
+        question: "_____ belong to individual objects, every object has its own copy of each one.",
+        answers: ["Instance variables"]
+    },
+    {
+        question: "An uncontrolled structure that allows the flow of execution to jump to a different part of the program.",
+        answers: ["branching"]
+    },
+    {
+        question: "Represents fractional numbers.",
+        answers: ["floating point"]
+    },
+    {
+        question: "True AND NOT False",
+        answers: ["True"]
+    },
+    {
+        question: "A widely used approach in systems analysis and software engineering for describing the structure of an information processing program or other process.",
+        answers: ["IPO"]
+    },
+    {
+        question: "A concrete occurance of an object.",
+        answers: ["instance"]
+    },
+    {
+        question: "Within objects, data is in the form of _____, often known as _____.",
+        answers: ["fields, attributes"]
+    },
+    {
+        question: "A specification that defines a property of an object.",
+        answers: ["attribute"]
+    },
+    {
+        question: "Variables created as part of a program's object code are _____.",
+        answers: ["global"]
+    }
+    ,
+    {
+        question: "The result of joining [&quot;Hello&quot;, &quot;world&quot;] using &quot; &quot; is _____.",
+        answers: ["Hello world"]
+    }
+    ,
+    {
+        question: "The value of 1 + 2 * 3 is _____.",
+        answers: ["7"]
+    }
+    ,
+    {
+        question: "A method used to control changes to a private member variables, also known as a setter method.",
+        answers: ["mutator"]
+    }
+    ,
+    {
+        question: "An object or class being based on another object or class, using the same implementation or specifying a new implementation to maintain the same behavior.",
+        answers: ["Inheritance"]
+    }
+    ,
+    {
+        question: "Objects are instances of _____",
+        answers: ["classes"]
+    }
+    ,
+    {
+        question: "Within objects, code is in the form of procedures, often known as _____.",
+        answers: ["methods"]
+    }
+    /*
+    ,
+    {
+        question: "",
+        answers: [""]
+    }
+    */
 ];
 
 const questionElement = document.getElementById("question");
