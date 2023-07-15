@@ -953,25 +953,6 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-document.addEventListener("keyup", event => {
-    if (hintButton.style.display == "block" && document.activeElement != input){
-        if(event.key == "h"){
-            hintButton.click();
-            event.preventDefault();
-        }
-    }
-    if(document.activeElement != input && checkButton.style.display == "block" && event.key === "Enter"){
-        checkButton.click();
-        event.preventDefault;
-        return;
-    }  
-    if(document.activeElement != input && nextButton.style.display == "block" && event.key === "Enter"){
-        nextButton.click();
-        event.preventDefault;
-        return;
-    }    
-});
-
 checkButton.addEventListener("click", () => {
     const isCorrect = input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[0].toLowerCase();
     if (isCorrect) {
