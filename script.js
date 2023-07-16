@@ -137,7 +137,7 @@ let questions = [
     },
     {
         question: "Define the data format and available procedures for a given type of object.",
-        answers: ["Classes"]
+        answers: ["classes"]
     },
     {
         question: "In software testing, test data should be verified by checking the pseudocode to see if it produces correct results.",
@@ -208,7 +208,7 @@ let questions = [
     },
     {
         question: "A method used to return the value of a private member variable, also known as a getter method.",
-        answers: ["Accessor"]
+        answers: ["accessor"]
     },
     {
         question: "The result of trimming &quot; &quot; from &quot;Hello world&quot; is _____.",
@@ -349,7 +349,7 @@ let questions = [
         answers: ["rounded rectangle"]
     },
     {
-        question: "In _____ , a statement or block is executed until the program reaches a certain state, or operations have been applied to every element of a collection.",
+        question: "In _____, a statement or block is executed until the program reaches a certain state, or operations have been applied to every element of a collection.",
         answers: ["iteration"]
     },
     {
@@ -422,11 +422,11 @@ let questions = [
     },
     {
         question: "How well a program anticipates errors.",
-        answers: ["Robustness"]
+        answers: ["robustness"]
     },
     {
         question: "How much a program can be kept up to date.",
-        answers: ["Maintainability"]
+        answers: ["maintainability"]
     },
     {
         question: "AND, OR, and NOT are _____ operators.",
@@ -474,7 +474,7 @@ let questions = [
     },
     {
         question: "_____ is the operator used to separate elements when initializing an array.",
-        answers: [","]
+        answers: ["Comma"]
     },
     {
         question: "A name that represents a value is an _____.",
@@ -514,6 +514,13 @@ let questions = [
     },
     {
         question: "Program comments should be self-documenting.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "The broad areas of program design include identifying program requirements.",
         answers: [
             { text: "True", correct: false },
             { text: "False", correct: true }
@@ -834,7 +841,7 @@ let questions = [
     ,
     {
         question: "An object or class being based on another object or class, using the same implementation or specifying a new implementation to maintain the same behavior.",
-        answers: ["Inheritance"]
+        answers: ["inheritance"]
     }
     ,
     {
@@ -845,6 +852,18 @@ let questions = [
     {
         question: "Within objects, code is in the form of procedures, often known as _____.",
         answers: ["methods"]
+    },
+    {
+        question: "A _____ is a sequence of program instructions that performs a specific task, packaged as a unit.",
+        answers: ["function"]
+    },
+    {
+        question: "A sequence of characters is a _____.",
+        answers: ["string"]
+    },
+    {
+        question: "A computer program that directly executes, i. e. performs, instructions written in a programming or scripting language, without previously compiling them into a machine language program.",
+        answers: ["interpreter"]
     }
     /*
     ,
