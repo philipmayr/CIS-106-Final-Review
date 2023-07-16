@@ -35,7 +35,7 @@ let questions = [
         ]
     },
     {
-        question: "Code block designators include indentation, curly braces, and end statements, depending on programming language",
+        question: "Code block designators include indentation, curly braces, and end statements, depending on programming language.",
         answers: [
             { text: "True", correct: true },
             { text: "False", correct: false }
@@ -140,6 +140,20 @@ let questions = [
         ]
     },
     {
+        question: "In the book examples, processing functions typically had one or more parameters in and a return value out.",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
+        question: "Starting with Planning, the correct order regarding the Systems Development Life Cycle is: Planning - Analysis - Design - Implementation - Maintenance.",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
         question: "The value of True AND True is _____.",
         answers: ["True"]
     },
@@ -149,7 +163,7 @@ let questions = [
     },
     {
         question: "_____ is used to identify a block of code in Python.",
-        answers: ["Indentation"]
+        answers: ["indentation"]
     },
     {
         question: "The data type of all input is _____.",
@@ -157,7 +171,7 @@ let questions = [
     },
     {
         question: "_____ is a branching statement that causes a function to jump back to the function that called it.",
-        answers: ["Return"]
+        answers: ["return"]
     },
     {
         question: "An anomaly where a program overwrites adjacent memory locations is a _____.",
@@ -165,7 +179,11 @@ let questions = [
     },
     {
         question: "_____ is a test before loop typically used when the number of iterations is known before entering the loop.",
-        answers: ["For"]
+        answers: ["for"]
+    },
+    {
+        question: "_____ is a test after loop typically used when the number of iterations is NOT known before entering the loop.",
+        answers: ["do"]
     },
     {
         question: "The data type of the value &quot;3.14&quot;.",
@@ -173,7 +191,7 @@ let questions = [
     },
     {
         question: "_____ is a two-way selection control structure.",
-        answers: ["if-then-else"]
+        answers: ["if-then-else", "if then else"]
     },
     {
         question: "Standard input stream, typically the keyboard is _____.",
@@ -201,7 +219,7 @@ let questions = [
     },
     {
         question: "During the _____ phase of the System Development Life Cycle, the programmers would be assigned to write the specific programs using a programming language decided by the System Analyst.",
-        answers: ["implementation"]
+        answers: ["Implementation"]
     },
     {
         question: "Variables created as part of a program's stack are _____.",
@@ -233,7 +251,7 @@ let questions = [
     },
     {
         question: "A function's communications declaration to a compiler is known as the _____.",
-        answers: ["prototype"]
+        answers: ["prototype", "function prototype"]
     },
     {
         question: "The result of finding the first index of &quot;l&quot; in &quot;Hello&quot; is _____.",
@@ -241,7 +259,7 @@ let questions = [
     },
     {
         question: "_____ is a multi-way selection control structure.",
-        answers: ["Case"]
+        answers: ["case", "switch"]
     },
     {
         question: "The most popular version control system is _____.",
@@ -261,19 +279,19 @@ let questions = [
     },
     {
         question: "_____ are used to identify a block of code in languages such as C++, C#, Java, and JavaScript.",
-        answers: ["Braces"]
+        answers: ["braces", "curly braces", "{}"]
     },
     {
         question: "_____ is a form of implicit data structure that uses multiple arrays to represent a singular array of data.",
-        answers: ["Parallel arrays"]
+        answers: ["parallel arrays"]
     },
     {
         question: "_____ is a control structure where the program chooses between two or more options.",
-        answers: ["Selection"]
+        answers: ["selection", "condition"]
     },
     {
         question: "_____ is a branching statement that terminates the existing structure.",
-        answers: ["Break"]
+        answers: ["break"]
     },
     {
         question: "A specification that defines a procedure or behavior of an object.",
@@ -281,7 +299,7 @@ let questions = [
     },
     {
         question: "_____ describes a loop with no terminating condition typically used when the number of iterations is NOT known before entering the loop.",
-        answers: ["Infinite"]
+        answers: ["infinite"]
     },
     {
         question: "A method used to return the value of a private member variable, also known as a getter method.",
@@ -305,19 +323,19 @@ let questions = [
     },
     {
         question: "_____ is a predefined function used to prematurely stop a program and return to the operating system.",
-        answers: ["Exit"]
+        answers: ["exit"]
     },
     {
         question: "_____ describes the amount of system resources used by a program.",
-        answers: ["Efficiency"]
+        answers: ["efficiency"]
     },
     {
         question: "An iteration control structure that places one loop inside another loop is known as _____.",
-        answers: ["nesting"]
+        answers: ["nesting", "nested"]
     },
     {
         question: "Keyword used in some computer programming languages to refer to the object, class, or other entity that the currently running code is part of.",
-        answers: ["self"]
+        answers: ["this", "self", "me"]
     },
     {
         question: "The value of True OR False is _____.",
@@ -325,7 +343,7 @@ let questions = [
     },
     {
         question: "_____ is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality.",
-        answers: ["Modular programming"]
+        answers: ["modular programming"]
     },
     {
         question: "Incorrect output is the result of a _____ error.",
@@ -333,7 +351,7 @@ let questions = [
     },
     {
         question: "_____ is a unary operator that adds one to the operand and uses the operand's original value.",
-        answers: ["Postfix increment"]
+        answers: ["postfix increment"]
     },
     {
         question: "A _____ shows the relationship of various modules.",
@@ -341,7 +359,7 @@ let questions = [
     },
     {
         question: "_____ is a branching statement that causes a loop to stop its current iteration and begin the next one.",
-        answers: ["Continue"]
+        answers: ["continue"]
     },
     {
         question: "The value of True AND NOT True is _____.",
@@ -349,11 +367,11 @@ let questions = [
     },
     {
         question: "The code that describes what a function does is known as the _____.",
-        answers: ["definition"]
+        answers: ["definition", "function definition"]
     },
     {
         question: "_____ describes how often the results of a program are correct.",
-        answers: ["Reliability"]
+        answers: ["reliability"]
     },
     {
         question: "A value that can be changed during normal execution is a _____.",
@@ -365,7 +383,7 @@ let questions = [
     },
     {
         question: "The relational operator meaning inequality is _____.",
-        answers: ["!="]
+        answers: ["<>", "!="]
     },
     {
         question: "A violation of the rules of a given programming language is a _____ error.",
@@ -381,11 +399,11 @@ let questions = [
     },
     {
         question: "The operator used to concatenate string values is _____.",
-        answers: ["&"]
+        answers: ["+", "&"]
     },
     {
         question: "_____ is a reserved word used to represent a missing value.",
-        answers: ["Null"]
+        answers: ["null", "None", "nil", "Nothing"]
     },
     {
         question: "A value that cannot be altered by the program during normal execution is a _____.",
@@ -393,7 +411,7 @@ let questions = [
     },
     {
         question: "_____ variables belong to the class as a whole; there is only one copy of each one.",
-        answers: ["Class"]
+        answers: ["class"]
     },
     {
         question: "Items that cannot occur at the same time are _____.",
@@ -407,17 +425,22 @@ let questions = [
         question: "The provision of a single interface to entities of different types.",
         answers: ["polymorphism"]
     },
+
     {
         question: "The _____ flowcharting symbol is used to indicate the flowchart's starting and ending points.",
         answers: ["rounded rectangle"]
     },
     {
         question: "In _____, a statement or block is executed until the program reaches a certain state, or operations have been applied to every element of a collection.",
-        answers: ["iteration"]
+        answers: ["iteration", "loop"]
     },
     {
         question: "_____ describes the ease with which a person can use a program for its intended purpose.",
-        answers: ["Usability"]
+        answers: ["usability"]
+    },
+    {
+        question: "_____ describes the ease with which a person can comprehend the source code of a program.",
+        answers: ["readability"]
     },
     {
         question: "A _____ combines object files into an executable program.",
@@ -429,7 +452,7 @@ let questions = [
     },
     {
         question: "_____ is the code structure that results in 'spaghetti code'.",
-        answers: ["Branching"]
+        answers: ["branching"]
     },
     {
         question: "A programmer needs _____ in order to make changes to a program.",
@@ -437,23 +460,23 @@ let questions = [
     },
     {
         question: "A _____ is a unit of code consisting of zero or more statements.",
-        answers: ["block"]
+        answers: ["block", "code block"]
     },
     {
         question: "_____ describes the range of platforms on which the source code of a program may be compiled or interpreted and run.",
-        answers: ["Portability"]
+        answers: ["portability"]
     },
     {
         question: "The data type for the result of a function that returns normally, but does not provide a result value to its caller is _____.",
-        answers: ["void"]
+        answers: ["void", "None"]
     },
     {
         question: "_____ is a control structure where the program chooses between two or more options.",
-        answers: ["Condition"]
+        answers: ["condition"]
     },
     {
         question: "_____ refers to the number of indicies needed to specify an element in an array.",
-        answers: ["Dimensionality"]
+        answers: ["dimensionality", "dimensions"]
     },
     {
         question: "Parameter passing which allows functions to modify the contents of passed arrays is _____.",
@@ -461,11 +484,11 @@ let questions = [
     },
     {
         question: "The data type of the value 3.14.",
-        answers: ["float"]
+        answers: ["float", "real", "double"]
     },
     {
         question: "_____ describes an arithmetic operation which attempts to create a numeric value that is outside the range that can be represented with a given number of bits.",
-        answers: ["Overflow"]
+        answers: ["overflow"]
     },
     {
         question: "To define a _____, each word is uppercase with underscores separating words.",
@@ -484,7 +507,7 @@ let questions = [
         answers: ["JavaScript"]
     },
     {
-        question: "How well a program anticipates errors.",
+        question: "_____ describes how well a program anticipates problems due to errors.",
         answers: ["robustness"]
     },
     {
@@ -537,7 +560,7 @@ let questions = [
     },
     {
         question: "_____ is the operator used to separate elements when initializing an array.",
-        answers: ["Comma"]
+        answers: ["comma", ","]
     },
     {
         question: "A name that represents a value is an _____.",
@@ -549,11 +572,11 @@ let questions = [
     },
     {
         question: "A function's using or invoking of another function is known as a _____.",
-        answers: ["call"]
+        answers: ["call", "function call"]
     },
     {
         question: "_____ describes how often the results of a program are correct.",
-        answers: ["Reliability"]
+        answers: ["reliability"]
     },
     {
         question: "Code made available across implementations of a programming language is known as a _____.",
@@ -569,7 +592,7 @@ let questions = [
     },
     {
         question: "_____ is the operator used to access elements when indexing an array in current programming languages.",
-        answers: ["Square brackets"]
+        answers: ["square brackets", "[]"]
     },
     {
         question: "A programming language that supports programs written for a special run-time environment that automate the execution of tasks that could alternatively be executed one-by-one by a human operator.",
@@ -577,7 +600,7 @@ let questions = [
     },
     {
         question: "Combining two strings into one string is known as _____.",
-        answers: ["concatenation"]
+        answers: ["concatenation", "string concatenation"]
     },
     {
         question: "The exploitation of a computer bug that is caused by processing invalid data is _____.",
@@ -597,7 +620,7 @@ let questions = [
     },
     {
         question: "_____ is an algorithm that puts elements of a list in a certain order.",
-        answers: ["Sort"]
+        answers: ["sort"]
     },
     {
         question: "The length of the string &quot;Hello world&quot; is _____.",
@@ -617,7 +640,7 @@ let questions = [
     },
     {
         question: "Blockly generates sample code in five programming languages, including _____.",
-        answers: ["Python"]
+        answers: ["JavaScript", "Python", "Lua", "PHP", "Dart"]
     },
     {
         question: "Many programmers neglect to complete the _____ step before starting to code the program.",
@@ -632,24 +655,20 @@ let questions = [
         answers: ["integer"]
     },
     {
-        question: "In the book examples, processing functions typically had one or more parameters in and a return value out.",
-        answers: [
-            { text: "True", correct: true },
-            { text: "False", correct: false }
-        ]
+        question: "_____ is a unary operator that adds one to the operand and uses the operand's new value.",
+        answers: ["prefix increment"]
     },
     {
-        question: "_____ is a unary operator that adds one to the operand and uses the operand's new value.",
-        answers: ["Prefix increment"]
+        question: "_____ is a control structure that allows some lines of code to be executed many times.",
+        answers: ["iteration", "loop"]
     },
-
     {
         question: "_____ is a control structure where the program executes the items in the order listed.",
-        answers: ["Sequence"]
+        answers: ["sequence"]
     },
     {
         question: "A software application that provides comprehensive facilities to computer programmers for software development.",
-        answers: ["IDE"]
+        answers: ["IDE", "integrated developer environment"]
     },
     {
         question: "The _____ flowcharting symbol is used to represent a true/false decision.",
@@ -657,7 +676,7 @@ let questions = [
     },
     {
         question: "_____ is an object-oriented programming concept that binds together the data and functions that manipulate the data, and that keeps both safe from outside interference and misuse.",
-        answers: ["Encapsulation"]
+        answers: ["encapsulation"]
     },
     {
         question: "The division operator is _____.",
@@ -700,6 +719,10 @@ let questions = [
         answers: ["=="]
     },
     {
+        question: "The relational operator meaning less than is _____.",
+        answers: ["<"]
+    },
+    {
         question: "Maximum number of digits in a 32-bit floating-point value is _____.",
         answers: ["7"]
     },
@@ -728,6 +751,10 @@ let questions = [
         answers: ["goto"]
     },
     {
+        question: "_____ is a method of planning programs that avoids the branching category of control structures.",
+        answers: ["structured programming"]
+    },
+    {
         question: "A test after loop typically used when the number of iterations is NOT known before entering the loop.",
         answers: ["do"]
     },
@@ -740,8 +767,8 @@ let questions = [
         answers: ["vertical alignment"]
     },
     {
-        question: "A parameter acts within the function as a new local variable initialized to the value of the argument.",
-        answers: ["call by value"]
+        question: "A parameter acts within the function as a new local variable initialized to the value of the argument is known as call by _____.",
+        answers: ["value"]
     },
     {
         question: "A special kind of variable used in a function to refer to one of the pieces of data provided as input to the function.",
@@ -749,7 +776,7 @@ let questions = [
     },
     {
         question: "_____ is a test before loop typically used when the number of iterations is NOT known before entering the loop.",
-        answers: ["While"]
+        answers: ["while"]
     },
     {
         question: "A technique for arranging complexity of computer systems so that functionality may be separated from specific implementation details.",
@@ -757,7 +784,7 @@ let questions = [
     },
     {
         question: "_____ is NOT a phase in the Systems Development Life Cycle.",
-        answers: ["Testing"]
+        answers: ["testing"]
     },
     {
         question: "Subtraction operator.",
@@ -765,18 +792,18 @@ let questions = [
     },
     {
         question: "The standard output device.",
-        answers: ["monitor"]
+        answers: ["monitor", "display"]
     },
     {
         question: "True OR True",
         answers: ["True"]
     },
     {
-        question: "Release access to a file.",
+        question: "To release access to a file is known as _____.",
         answers: ["close"]
     },
     {
-        question: "The result of splitting &quot; Hello world&quot; using &quot &quot.",
+        question: "The result of splitting &quot;Hello world&quot; using &quot &quot.",
         answers: ["[&quotHello&quot, &quotworld&quot]"]
     },
     {
@@ -788,8 +815,8 @@ let questions = [
         answers: ["dynamic array"]
     },
     {
-        question: "Causes execution to leave the current function and resume at the point in the code immediately after where the function was called.",
-        answers: ["return statement"]
+        question: "A _____ causes execution to leave the current function and resume at the point in the code immediately after where the function was called.",
+        answers: ["return statement", "return"]
     },
     {
         question: "Used to delineate a string literal.",
@@ -797,7 +824,7 @@ let questions = [
     },
     {
         question: "_____ belong to individual objects, every object has its own copy of each one.",
-        answers: ["Instance variables"]
+        answers: ["instance variables"]
     },
     {
         question: "An uncontrolled structure that allows the flow of execution to jump to a different part of the program.",
@@ -853,7 +880,7 @@ let questions = [
     }
     ,
     {
-        question: "Objects are instances of _____",
+        question: "Objects are instances of _____.",
         answers: ["classes"]
     }
     ,
@@ -882,12 +909,12 @@ let questions = [
     {
         question: "The result of replacing &quot;H&quot; with &quot;j&quot; in the string &quot;Hello&quot; is _____.",
         answers: ["jello"]
-    }
-     /*
-    {
-        question: "",
-        answers: [""]
     },
+    {
+        question: "The value obtained by inverting all the bits in the binary representation of a number is the _____.",
+        answers: ["one's complement", "ones complement"]
+    }
+    /*
     {
         question: "",
         answers: [""]
@@ -928,7 +955,7 @@ function showQuestion(){
         input.placeholder = "";
     }
 
-    if (currentQuestion.answers.length === 1){
+    if (currentQuestion.answers[0].text == null){
         input.style.display = "block";
         input.style.color = '#03254c';
         input.style.borderColor = '#03254c';
@@ -994,10 +1021,21 @@ nextButton.addEventListener("click", () => {
 });
 
 checkButton.addEventListener("click", () => {
-    const isCorrect = input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[0].toLowerCase();
+    index = 0;
+    let isCorrect;
+    for (let i = 0; i < questions[currentQuestionIndex].answers.length; i++) {
+        if (input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[i].toLowerCase()) {
+            index = i;
+            isCorrect = true;
+            break;
+        }
+        if (i == questions[currentQuestionIndex].answers.length - 1) {
+            isCorrect = false;
+        }
+    }
     if (isCorrect) {
         audio.play();
-        input.value = questions[currentQuestionIndex].answers[0];
+        input.value = questions[currentQuestionIndex].answers[index];
         score++;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
