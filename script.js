@@ -993,7 +993,7 @@ function resetState() {
 function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct;
-    if(isCorrect) {
+    if (isCorrect) {
         audio.play();
         selectedBtn.classList.add("correct");
         score++;
@@ -1056,8 +1056,17 @@ nextButton.addEventListener("keyup", event => {
     event.preventDefault();
 });
 
+document.addEventListener("keyup", event => {
+    if (event.key === "t" && input.style.display == "none") {
+        answerButtons.children[0].click();
+    } else if (event.key === "f" && input.style.display == "none") {
+        answerButtons.children[1].click();
+    }
+    event.preventDefault();
+});
+
 input.addEventListener("keyup", event => {
-    if(event.key !== "Enter") {
+    if (event.key !== "Enter") {
         input.style.color = '#03254c';
         return;
     }
