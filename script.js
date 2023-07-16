@@ -922,21 +922,23 @@ let questions = [
     */
 ];
 
+const questionCounter = document.getElementById("question-counter")
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btns");
-const nextButton = document.getElementById("next-btn");
-const input = document.getElementById("input");
 const checkButton = document.getElementById("check-btn");
+const nextButton = document.getElementById("next-btn");
 const hintButton = document.getElementById("hint-btn");
+const input = document.getElementById("input");
 const audio = new Audio('ping.mp3');
-const questionCounter = document.getElementById("question-counter")
+
+let currentQuestionIndex = 0;
+let counter = 0;
+let score = 0;
+let hint = "";
 
 audio.volume = 0.33;
 
-let currentQuestionIndex = 0;
-let score = 0;
-
-function startQuiz(){
+function startQuiz() {
     questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
     score = 0;
@@ -946,28 +948,28 @@ function startQuiz(){
     showQuestion();
 }
 
-function showQuestion(){
+function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     questionElement.innerHTML = currentQuestion.question;
     
-    if (currentQuestionIndex > 0){
+    if (currentQuestionIndex > 0) {
         input.placeholder = "";
     }
 
-    if (currentQuestion.answers[0].text == null){
+    if (currentQuestion.answers[0].text == null) {
         input.style.display = "block";
         input.style.color = '#03254c';
         input.style.borderColor = '#03254c';
         input.focus();
         checkButton.style.display = "block";
-    }else{
+    } else {
         currentQuestion.answers.forEach(answer => {
             const button = document.createElement("button");
             button.innerHTML = answer.text;
             button.classList.add("btn");
             answerButtons.appendChild(button);
-            if(answer.correct){
+            if(answer.correct) {
                 button.dataset.correct = answer.correct;
             }
             button.addEventListener("click", selectAnswer);
@@ -975,7 +977,7 @@ function showQuestion(){
     }
 }
 
-function resetState(){
+function resetState() {
     questionCounter.innerHTML = `${currentQuestionIndex + 1} of 50`;
     input.style.color = '#03254c';
     input.value = "";
@@ -983,23 +985,23 @@ function resetState(){
     hint = "";
     checkButton.innerHTML = "Check";
     nextButton.style.display = "none";
-    while(answerButtons.firstChild){
+    while(answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
 
-function selectAnswer(e){
+function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct;
-    if(isCorrect){
+    if(isCorrect) {
         audio.play();
         selectedBtn.classList.add("correct");
         score++;
-    }else{
+    } else {
         selectedBtn.classList.add("incorrect");
     }
     Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === "true"){
+        if(button.dataset.correct === "true") {
             button.classList.add("correct");
         }   
         button.disabled = true;
@@ -1013,24 +1015,21 @@ nextButton.addEventListener("click", () => {
     input.disabled = false;
     checkButton.style.display = "none";
     input.style.display = "none";
-    if(currentQuestionIndex < 50){
+    if(currentQuestionIndex < 50) {
         handleNextButton();
-    }else{
+    } else {
         startQuiz();
     }
 });
 
 checkButton.addEventListener("click", () => {
     index = 0;
-    let isCorrect;
+    let isCorrect = false;
     for (let i = 0; i < questions[currentQuestionIndex].answers.length; i++) {
         if (input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[i].toLowerCase()) {
             index = i;
             isCorrect = true;
             break;
-        }
-        if (i == questions[currentQuestionIndex].answers.length - 1) {
-            isCorrect = false;
         }
     }
     if (isCorrect) {
@@ -1044,15 +1043,12 @@ checkButton.addEventListener("click", () => {
         input.style.color = '#008000';
         input.disabled = true;
         nextButton.focus();
-    }else{
+    } else {
         input.style.borderColor = 'grey';
         input.style.color = 'grey';
         hintButton.style.display = "block";
     }
 });
-
-counter = 0;
-hint = "";
 
 nextButton.addEventListener("keyup", event => {
     if(event.key !== "Enter") return;
@@ -1061,11 +1057,11 @@ nextButton.addEventListener("keyup", event => {
 });
 
 input.addEventListener("keyup", event => {
-    if(event.key !== "Enter"){
+    if(event.key !== "Enter") {
         input.style.color = '#03254c';
         return;
     }
-    if (input.value != ""){
+    if (input.value != "") {
         checkButton.click();  
     }
     event.preventDefault();
@@ -1073,7 +1069,7 @@ input.addEventListener("keyup", event => {
 
 hintButton.addEventListener("click", () => {
     const currentQuestion = questions[currentQuestionIndex].answers[0];
-    if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()){
+    if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
         input.style.color = '#008000';
         input.style.borderColor = '#008000';
         input.value = questions[currentQuestionIndex].answers[0];
@@ -1083,17 +1079,16 @@ hintButton.addEventListener("click", () => {
         nextButton.focus();
         input.disabled = true;
         score++;
-        return;
-    }else{
+    } else {
         if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
             hint = input.value + currentQuestion[input.value.length];
-        }else{
+        } else {
             hint += currentQuestion[counter];
         }
         input.value = hint;
         input.focus();
         counter++;
-        if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()){
+        if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
             input.value = questions[currentQuestionIndex].answers[0];
@@ -1107,7 +1102,7 @@ hintButton.addEventListener("click", () => {
     }
 });
 
-function showScore(){
+function showScore() {
     nextButton.disabled = true;
     resetState();
     nextButton.disabled = false;
@@ -1120,14 +1115,14 @@ function showScore(){
     score = 0;
 }
 
-function handleNextButton(){
-    if (nextButton.innerHTML == "Restart Review"){
+function handleNextButton() {
+    if (nextButton.innerHTML == "Restart Review") {
         startQuiz();
-    }else{
+    } else {
         currentQuestionIndex++;
-        if(currentQuestionIndex < 50){
+        if(currentQuestionIndex < 50) {
             showQuestion();
-        }else{
+        } else {
             showScore();
         }
     }
