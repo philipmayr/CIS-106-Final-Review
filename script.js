@@ -35,6 +35,111 @@ let questions = [
         ]
     },
     {
+        question: "Code block designators include indentation, curly braces, and end statements, depending on programming language",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
+        question: "A widely used approach in systems analysis and software engineering for describing the structure of an information processing program or other process is known as XML.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "Maximum numeric range of a 32-bit integer is 2,147,483,647.",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
+        question: "Software testing includes verifying that the program responds correctly to all kinds of inputs.",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
+        question: "In software testing, test data should be verified by checking the pseudocode to see if it produces correct results.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "The first action in defining a do loop is to test an expression.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "Maximum numeric range of a character is 255.",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
+        question: "Program comments should be self-documenting.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "The broad areas of program design include identifying program requirements.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "A two-dimensional array element may be accessed using array[row, column].",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "Maximum numeric range of a 64-bit integer is 2,147,483,647.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "Horizontal variable alignment makes a program harder to maintain.",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
+        question: "In the book examples, input functions typically had one or more parameters in and no return value out.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
+        question: "Maximum numeric range of a 16-bit integer is 32,767.",
+        answers: [
+            { text: "True", correct: true },
+            { text: "False", correct: false }
+        ]
+    },
+    {
+        question: "The first step in reading a comma-separated-values file is to read the header.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
         question: "The value of True AND True is _____.",
         answers: ["True"]
     },
@@ -79,13 +184,6 @@ let questions = [
         answers: ["string"]
     },
     {
-        question: "A widely used approach in systems analysis and software engineering for describing the structure of an information processing program or other process is known as XML.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
-    },
-    {
         question: "The assignment operator is _____.",
         answers: ["="]
     },
@@ -106,13 +204,6 @@ let questions = [
         answers: ["implementation"]
     },
     {
-        question: "Maximum numeric range of a 32-bit integer is 2,147,483,647.",
-        answers: [
-            { text: "True", correct: true },
-            { text: "False", correct: false }
-        ]
-    },
-    {
         question: "Variables created as part of a program's stack are _____.",
         answers: ["local"]
     },
@@ -125,26 +216,12 @@ let questions = [
         answers: ["olleH"]
     },
     {
-        question: "Software testing includes verifying that the program responds correctly to all kinds of inputs.",
-        answers: [
-            { text: "True", correct: true },
-            { text: "False", correct: false }
-        ]
-    },
-    {
         question: "_____ is the index value of the second element in an array.",
         answers: ["1"]
     },
     {
         question: "Define the data format and available procedures for a given type of object.",
         answers: ["classes"]
-    },
-    {
-        question: "In software testing, test data should be verified by checking the pseudocode to see if it produces correct results.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
     },
     {
         question: "A software application that provides comprehensive facilities to computer programmers for software development.",
@@ -235,26 +312,12 @@ let questions = [
         answers: ["Efficiency"]
     },
     {
-        question: "The first action in defining a do loop is to test an expression.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
-    },
-    {
         question: "An iteration control structure that places one loop inside another loop is known as _____.",
         answers: ["nesting"]
     },
     {
         question: "Keyword used in some computer programming languages to refer to the object, class, or other entity that the currently running code is part of.",
         answers: ["self"]
-    },
-    {
-        question: "Maximum numeric range of a character is 255.",
-        answers: [
-            { text: "True", correct: true },
-            { text: "False", correct: false }
-        ]
     },
     {
         question: "The value of True OR False is _____.",
@@ -513,20 +576,6 @@ let questions = [
         answers: ["scripting language"]
     },
     {
-        question: "Program comments should be self-documenting.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
-    },
-    {
-        question: "The broad areas of program design include identifying program requirements.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
-    },
-    {
         question: "Combining two strings into one string is known as _____.",
         answers: ["concatenation"]
     },
@@ -593,20 +642,7 @@ let questions = [
         question: "_____ is a unary operator that adds one to the operand and uses the operand's new value.",
         answers: ["Prefix increment"]
     },
-    {
-        question: "A two-dimensional array element may be accessed using array[row, column].",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
-    },
-    {
-        question: "Maximum numeric range of a 64-bit integer is 2,147,483,647.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
-    },
+
     {
         question: "_____ is a control structure where the program executes the items in the order listed.",
         answers: ["Sequence"]
@@ -640,33 +676,12 @@ let questions = [
         answers: ["input, process, output"]
     },
     {
-        question: "Horizontal variable alignment makes a program harder to maintain.",
-        answers: [
-            { text: "True", correct: true },
-            { text: "False", correct: false }
-        ]
-    },
-    {
-        question: "In the book examples, input functions typically had one or more parameters in and no return value out.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
-    },
-    {
         question: "The result of selecting a substring of &quot;Hello world&quot; starting at 7 for length 2 is _____.",
         answers: ["or"]
     },
     {
         question: "The value of True AND False is _____.",
         answers: ["False"]
-    },
-    {
-        question: "Maximum numeric range of a 16-bit integer is 32,767.",
-        answers: [
-            { text: "True", correct: true },
-            { text: "False", correct: false }
-        ]
     },
     {
         question: "A general purpose programming language developed at Sun Microsystems and released in 1995.",
@@ -679,13 +694,6 @@ let questions = [
     {
         question: "The result of using a lower function on the string &quot;Hello&quot; is _____.",
         answers: ["hello"]
-    },
-    {
-        question: "The first step in reading a comma-separated-values file is to read the header.",
-        answers: [
-            { text: "True", correct: false },
-            { text: "False", correct: true }
-        ]
     },
     {
         question: "The relational operator meaning equality is _____.",
@@ -865,8 +873,21 @@ let questions = [
         question: "A computer program that directly executes, i. e. performs, instructions written in a programming or scripting language, without previously compiling them into a machine language program.",
         answers: ["interpreter"]
     }
-    /*
     ,
+    {
+        question: "Properties or methods of a class that apply to all instances of the class rather than to any specific instance.",
+        answers: ["static"]
+    }
+    ,
+    {
+        question: "The result of replacing &quot;H&quot; with &quot;j&quot; in the string &quot;Hello&quot; is _____.",
+        answers: ["jello"]
+    }
+     /*
+    {
+        question: "",
+        answers: [""]
+    },
     {
         question: "",
         answers: [""]
