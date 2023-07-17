@@ -978,6 +978,7 @@ function showQuestion() {
 }
 
 function resetState() {
+    flag = false;
     questionCounter.innerHTML = `${currentQuestionIndex + 1} of 50`;
     input.style.color = '#03254c';
     input.value = "";
@@ -1057,15 +1058,25 @@ nextButton.addEventListener("keyup", event => {
 });
 
 document.addEventListener("keyup", event => {
-    if (event.key === "t" && input.style.display == "none") {
+    if (event.key === "t" && input.style.display === "none") {
         answerButtons.children[0].click();
-    } else if (event.key === "f" && input.style.display == "none") {
+    } else if (event.key === "f" && input.style.display === "none") {
         answerButtons.children[1].click();
-    } else if (event.key === " " && (input.disabled == true || input.style.display == "none")) {
+    } else if (event.key === " " && (input.disabled === true || input.style.display === "none")) {
         nextButton.click();
+    } else if (event.key === "h" && hintButton.style.display === "block" && document.activeElement !== input) {
+        hintButton.click();
+    } else if ((event.key === "Enter" || event.key === " ") && nextButton.style.display === "block" && document.activeElement !== input && flag === false) {
+        if (nextButton.style.display === "block") {
+            nextButton.click();
+        } else if (checkButton.style.display === "block") {
+            checkButton.click();
+        }
     }
     event.preventDefault();
 });
+
+let flag = false;
 
 input.addEventListener("keyup", event => {
     if (event.key !== "Enter") {
@@ -1073,6 +1084,7 @@ input.addEventListener("keyup", event => {
         return;
     }
     if (input.value != "") {
+        flag = true;
         checkButton.click();  
     }
     event.preventDefault();
