@@ -1113,8 +1113,8 @@ hintButton.addEventListener("click", () => {
     } else {
         if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
             hint = input.value + currentQuestion[input.value.length];
-        } else if (input.value.trim().length > currentQuestion.length) {
-            hint = currentQuestion.substring(0, index);
+        } else if (input.value.trim().length >= currentQuestion.length) {
+            hint = currentQuestion.substring(0, index + 1);
             counter--;
         } else {
             hint += currentQuestion[counter];
