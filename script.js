@@ -1061,6 +1061,8 @@ document.addEventListener("keyup", event => {
         answerButtons.children[0].click();
     } else if (event.key === "f" && input.style.display == "none") {
         answerButtons.children[1].click();
+    } else if (event.key === " " && (input.disabled == true || input.style.display == "none")) {
+        nextButton.click();
     }
     event.preventDefault();
 });
