@@ -692,7 +692,7 @@ let questions = [
     },
     {
         question: "IPO in computer programming refers to the _____ model.",
-        answers: ["input, process, output"]
+        answers: ["input, process, output", "input process output"]
     },
     {
         question: "The result of selecting a substring of &quot;Hello world&quot; starting at 7 for length 2 is _____.",
@@ -1092,18 +1092,24 @@ input.addEventListener("keyup", event => {
 
 hintButton.addEventListener("click", () => {
     let index = 0;
-    for (let i = 0; i < questions[currentQuestionIndex].answers[0].length; i++) {
-        if (questions[currentQuestionIndex].answers[0].toLowerCase().startsWith(input.value.toLowerCase().trim().substring(0, i))) {
-            index = i;
-        } else {
-            break
+    let answer = 0;
+    for (let a = 0; a < questions[currentQuestionIndex].answers.length; a++) {
+        for (let i = 0; i < questions[currentQuestionIndex].answers[a].length; i++) {
+            if (questions[currentQuestionIndex].answers[a].toLowerCase().startsWith(input.value.toLowerCase().trim().substring(0, i))) {
+                if (i > index) {
+                    index = i;
+                    answer = a;
+                }
+            } else {
+                break
+            }
         }
     }
-    const currentQuestion = questions[currentQuestionIndex].answers[0];
+    const currentQuestion = questions[currentQuestionIndex].answers[answer];
     if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
         input.style.color = '#008000';
         input.style.borderColor = '#008000';
-        input.value = questions[currentQuestionIndex].answers[0];
+        input.value = currentQuestion;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
         hintButton.style.display = "none";
@@ -1125,7 +1131,7 @@ hintButton.addEventListener("click", () => {
         if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
-            input.value = questions[currentQuestionIndex].answers[0];
+            input.value = currentQuestion;
             checkButton.style.display = "none";
             nextButton.style.display = "block";
             hintButton.style.display = "none";
