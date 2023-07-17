@@ -243,7 +243,7 @@ let questions = [
     },
     {
         question: "A software application that provides comprehensive facilities to computer programmers for software development.",
-        answers: ["IDE"]
+        answers: ["IDE", "integrated development environment"]
     },
     {
         question: "The relational operator meaning greater than is _____.",
