@@ -692,7 +692,7 @@ let questions = [
     },
     {
         question: "IPO in computer programming refers to the _____ model.",
-        answers: ["input, process, output"]
+        answers: ["input, process, output", "input process output"]
     },
     {
         question: "The result of selecting a substring of &quot;Hello world&quot; starting at 7 for length 2 is _____.",
@@ -820,7 +820,7 @@ let questions = [
     },
     {
         question: "Used to delineate a string literal.",
-        answers: ["&quot;"]
+        answers: ['"']
     },
     {
         question: "_____ belong to individual objects, every object has its own copy of each one.",
@@ -843,7 +843,7 @@ let questions = [
         answers: ["IPO"]
     },
     {
-        question: "A concrete occurance of an object.",
+        question: "A concrete occurrence of an object.",
         answers: ["instance"]
     },
     {
@@ -969,7 +969,7 @@ function showQuestion() {
             button.innerHTML = answer.text;
             button.classList.add("btn");
             answerButtons.appendChild(button);
-            if(answer.correct) {
+            if (answer.correct) {
                 button.dataset.correct = answer.correct;
             }
             button.addEventListener("click", selectAnswer);
@@ -978,6 +978,7 @@ function showQuestion() {
 }
 
 function resetState() {
+    flag = false;
     questionCounter.innerHTML = `${currentQuestionIndex + 1} of 50`;
     input.style.color = '#03254c';
     input.value = "";
@@ -1001,7 +1002,7 @@ function selectAnswer(e) {
         selectedBtn.classList.add("incorrect");
     }
     Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === "true") {
+        if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }   
         button.disabled = true;
@@ -1057,13 +1058,25 @@ nextButton.addEventListener("keyup", event => {
 });
 
 document.addEventListener("keyup", event => {
-    if (event.key === "t" && input.style.display == "none") {
+    if (event.key === "t" && (input.style.display === "none" || input.style.display === "")) {
         answerButtons.children[0].click();
-    } else if (event.key === "f" && input.style.display == "none") {
+    } else if (event.key === "f" && (input.style.display === "none" || input.style.display === "")) {
         answerButtons.children[1].click();
+    } else if (event.key === " " && (input.disabled === true || input.style.display === "none")) {
+        nextButton.click();
+    } else if (event.key === "h" && hintButton.style.display === "block" && document.activeElement !== input) {
+        hintButton.click();
+    } else if ((event.key === "Enter" || event.key === " ") && document.activeElement !== input && flag === false) {
+        if (nextButton.style.display === "block") {
+            nextButton.click();
+        } else if (checkButton.style.display === "block") {
+            checkButton.click();
+        }
     }
     event.preventDefault();
 });
+
+let flag = false;
 
 input.addEventListener("keyup", event => {
     if (event.key !== "Enter") {
@@ -1071,17 +1084,32 @@ input.addEventListener("keyup", event => {
         return;
     }
     if (input.value != "") {
+        flag = true;
         checkButton.click();  
     }
     event.preventDefault();
 });
 
 hintButton.addEventListener("click", () => {
-    const currentQuestion = questions[currentQuestionIndex].answers[0];
+    let index = 0;
+    let answer = 0;
+    for (let a = 0; a < questions[currentQuestionIndex].answers.length; a++) {
+        for (let i = 0; i < questions[currentQuestionIndex].answers[a].length; i++) {
+            if (questions[currentQuestionIndex].answers[a].toLowerCase().startsWith(input.value.toLowerCase().trim().substring(0, i))) {
+                if (i > index) {
+                    index = i;
+                    answer = a;
+                }
+            } else {
+                break
+            }
+        }
+    }
+    const currentQuestion = questions[currentQuestionIndex].answers[answer];
     if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
         input.style.color = '#008000';
         input.style.borderColor = '#008000';
-        input.value = questions[currentQuestionIndex].answers[0];
+        input.value = currentQuestion;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
         hintButton.style.display = "none";
@@ -1091,6 +1119,9 @@ hintButton.addEventListener("click", () => {
     } else {
         if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
             hint = input.value + currentQuestion[input.value.length];
+        } else if (input.value.trim().length >= currentQuestion.length) {
+            hint = currentQuestion.substring(0, index + 1);
+            counter--;
         } else {
             hint += currentQuestion[counter];
         }
@@ -1100,7 +1131,7 @@ hintButton.addEventListener("click", () => {
         if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
-            input.value = questions[currentQuestionIndex].answers[0];
+            input.value = currentQuestion;
             checkButton.style.display = "none";
             nextButton.style.display = "block";
             hintButton.style.display = "none";
@@ -1129,7 +1160,7 @@ function handleNextButton() {
         startQuiz();
     } else {
         currentQuestionIndex++;
-        if(currentQuestionIndex < 50) {
+        if (currentQuestionIndex < 50) {
             showQuestion();
         } else {
             showScore();
