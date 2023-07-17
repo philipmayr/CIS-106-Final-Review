@@ -1091,6 +1091,14 @@ input.addEventListener("keyup", event => {
 });
 
 hintButton.addEventListener("click", () => {
+    let index = 0;
+    for (let i = 0; i < questions[currentQuestionIndex].answers[0].length; i++) {
+        if (questions[currentQuestionIndex].answers[0].toLowerCase().startsWith(input.value.toLowerCase().trim().substring(0, i))) {
+            index = i;
+        } else {
+            break
+        }
+    }
     const currentQuestion = questions[currentQuestionIndex].answers[0];
     if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
         input.style.color = '#008000';
@@ -1105,6 +1113,9 @@ hintButton.addEventListener("click", () => {
     } else {
         if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
             hint = input.value + currentQuestion[input.value.length];
+        } else if (input.value.trim().length > currentQuestion.length) {
+            hint = currentQuestion.substring(0, index);
+            counter--;
         } else {
             hint += currentQuestion[counter];
         }
