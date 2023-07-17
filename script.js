@@ -1058,9 +1058,9 @@ nextButton.addEventListener("keyup", event => {
 });
 
 document.addEventListener("keyup", event => {
-    if (event.key === "t" && input.style.display === "none") {
+    if (event.key === "t" && (input.style.display === "none" || input.style.display === "")) {
         answerButtons.children[0].click();
-    } else if (event.key === "f" && input.style.display === "none") {
+    } else if (event.key === "f" && (input.style.display === "none" || input.style.display === "")) {
         answerButtons.children[1].click();
     } else if (event.key === " " && (input.disabled === true || input.style.display === "none")) {
         nextButton.click();
