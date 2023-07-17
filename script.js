@@ -969,7 +969,7 @@ function showQuestion() {
             button.innerHTML = answer.text;
             button.classList.add("btn");
             answerButtons.appendChild(button);
-            if(answer.correct) {
+            if (answer.correct) {
                 button.dataset.correct = answer.correct;
             }
             button.addEventListener("click", selectAnswer);
@@ -1002,7 +1002,7 @@ function selectAnswer(e) {
         selectedBtn.classList.add("incorrect");
     }
     Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === "true") {
+        if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }   
         button.disabled = true;
@@ -1160,7 +1160,7 @@ function handleNextButton() {
         startQuiz();
     } else {
         currentQuestionIndex++;
-        if(currentQuestionIndex < 50) {
+        if (currentQuestionIndex < 50) {
             showQuestion();
         } else {
             showScore();
