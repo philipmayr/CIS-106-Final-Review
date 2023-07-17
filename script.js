@@ -843,7 +843,7 @@ let questions = [
         answers: ["IPO"]
     },
     {
-        question: "A concrete occurance of an object.",
+        question: "A concrete occurrence of an object.",
         answers: ["instance"]
     },
     {
