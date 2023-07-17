@@ -820,7 +820,7 @@ let questions = [
     },
     {
         question: "Used to delineate a string literal.",
-        answers: ["&quot;"]
+        answers: ['"']
     },
     {
         question: "_____ belong to individual objects, every object has its own copy of each one.",
@@ -1066,7 +1066,7 @@ document.addEventListener("keyup", event => {
         nextButton.click();
     } else if (event.key === "h" && hintButton.style.display === "block" && document.activeElement !== input) {
         hintButton.click();
-    } else if ((event.key === "Enter" || event.key === " ") && nextButton.style.display === "block" && document.activeElement !== input && flag === false) {
+    } else if ((event.key === "Enter" || event.key === " ") && document.activeElement !== input && flag === false) {
         if (nextButton.style.display === "block") {
             nextButton.click();
         } else if (checkButton.style.display === "block") {
