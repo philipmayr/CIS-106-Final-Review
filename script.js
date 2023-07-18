@@ -783,8 +783,17 @@ let questions = [
         answers: ["abstraction"]
     },
     {
+        question: "_____ is a phase in the System Development Life Cycle.",
+        answers: ["Planning", "Analysis", "Design", "Implementation", "Maintenance"]
+    },
+    {
         question: "_____ is NOT a phase in the Systems Development Life Cycle.",
-        answers: ["testing"]
+        answers: [
+            { text: "Testing", correct: true },
+            { text: "Planning", correct: false },
+            { text: "Analysis", correct: false },
+            { text: "Design", correct: false }
+        ]
     },
     {
         question: "Subtraction operator.",
@@ -1058,10 +1067,14 @@ nextButton.addEventListener("keyup", event => {
 });
 
 document.addEventListener("keyup", event => {
-    if (event.key === "t" && (input.style.display === "none" || input.style.display === "")) {
+    if ((event.key === "t" || event.key === "1") && (input.style.display === "none" || input.style.display === "")) {
         answerButtons.children[0].click();
-    } else if (event.key === "f" && (input.style.display === "none" || input.style.display === "")) {
-        answerButtons.children[1].click();
+    } else if ((event.key === "f" || event.key === "2") && (input.style.display === "none" || input.style.display === "")) {
+        answerButtons.children[1].click()
+    } else if (event.key === "3" && (input.style.display === "none" || input.style.display === "")) {
+        answerButtons.children[2].click();
+    } else if (event.key === "4" && (input.style.display === "none" || input.style.display === "")) {
+        answerButtons.children[3].click();
     } else if (event.key === " " && (input.disabled === true || input.style.display === "none")) {
         nextButton.click();
     } else if (event.key === "h" && hintButton.style.display === "block" && document.activeElement !== input) {
