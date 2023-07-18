@@ -1093,9 +1093,12 @@ input.addEventListener("keyup", event => {
 hintButton.addEventListener("click", () => {
     let index = 0;
     let answer = 0;
-    for (let a = 0; a < questions[currentQuestionIndex].answers.length; a++) {
-        for (let i = 0; i < questions[currentQuestionIndex].answers[a].length; i++) {
-            if (questions[currentQuestionIndex].answers[a].toLowerCase().startsWith(input.value.toLowerCase().trim().substring(0, i))) {
+    const answers = questions[currentQuestionIndex].answers;
+    const inputValue = input.value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+    for (let a = 0; a < answers.length; a++) {
+        for (let i = 0; i < answers[a].length; i++) {
+            if (answers[a].toLowerCase().startsWith(inputValue.substring(0, i))) {
                 if (i > index) {
                     index = i;
                     answer = a;
@@ -1105,11 +1108,11 @@ hintButton.addEventListener("click", () => {
             }
         }
     }
-    const currentQuestion = questions[currentQuestionIndex].answers[answer];
-    if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
+    const currentAnswer = answers[answer];
+    if (inputValue == currentAnswer.toLowerCase()) {
         input.style.color = '#008000';
         input.style.borderColor = '#008000';
-        input.value = currentQuestion;
+        input.value = currentAnswer;
         checkButton.style.display = "none";
         nextButton.style.display = "block";
         hintButton.style.display = "none";
@@ -1117,21 +1120,21 @@ hintButton.addEventListener("click", () => {
         input.disabled = true;
         score++;
     } else {
-        if (input.value.trim().length > 0 && input.value.trim().length < currentQuestion.length + 1 && (input.value.trim().toLowerCase() == currentQuestion.substring(0, input.value.trim().length).toLowerCase())){
-            hint = input.value + currentQuestion[input.value.length];
-        } else if (input.value.trim().length >= currentQuestion.length) {
-            hint = currentQuestion.substring(0, index + 1);
+        if (inputLength > 0 && inputLength < currentAnswer.length + 1 && (inputValue == currentAnswer.substring(0, inputLength).toLowerCase())){
+            hint = input.value + currentAnswer[input.value.length];
+        } else if (inputLength >= currentAnswer.length) {
+            hint = currentAnswer.substring(0, index + 1);
             counter--;
         } else {
-            hint += currentQuestion[counter];
+            hint += currentAnswer[counter];
         }
         input.value = hint;
         input.focus();
         counter++;
-        if (input.value.trim().toLowerCase() == currentQuestion.toLowerCase()) {
+        if (input.value.trim().toLowerCase() == currentAnswer.toLowerCase()) {
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
-            input.value = currentQuestion;
+            input.value = currentAnswer;
             checkButton.style.display = "none";
             nextButton.style.display = "block";
             hintButton.style.display = "none";
