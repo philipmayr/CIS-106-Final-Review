@@ -105,6 +105,15 @@ let questions = [
         ]
     },
     {
+        question: "A two-dimensional array element may be accessed using _____.",
+        answers: [
+            { text: "array[row][column]", correct: true },
+            { text: "array[column][row]", correct: false },
+            { text: "array[row, column]", correct: false },
+            { text: "array[column, row]", correct: false }
+        ]
+    },
+    {
         question: "Maximum numeric range of a 64-bit integer is 2,147,483,647.",
         answers: [
             { text: "True", correct: false },
