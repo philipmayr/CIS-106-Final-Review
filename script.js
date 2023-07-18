@@ -163,6 +163,13 @@ let questions = [
         ]
     },
     {
+        question: "The last action in defining a while loop is test an expression.",
+        answers: [
+            { text: "True", correct: false },
+            { text: "False", correct: true }
+        ]
+    },
+    {
         question: "The value of True AND True is _____.",
         answers: ["True"]
     },
@@ -1045,7 +1052,7 @@ checkButton.addEventListener("click", () => {
     index = 0;
     let isCorrect = false;
     for (let i = 0; i < questions[currentQuestionIndex].answers.length; i++) {
-        if (input.value.toLowerCase().trim() == questions[currentQuestionIndex].answers[i].toLowerCase()) {
+        if (input.value.toLowerCase().trim().replace(/\s+/g, " ") == questions[currentQuestionIndex].answers[i].toLowerCase()) {
             index = i;
             isCorrect = true;
             break;
@@ -1116,7 +1123,7 @@ hintButton.addEventListener("click", () => {
     let index = 0;
     let answer = 0;
     const answers = questions[currentQuestionIndex].answers;
-    const inputValue = input.value.trim().toLowerCase();
+    let inputValue = input.value.trim().toLowerCase().replace(/\s+/g, " ");
     const inputLength = inputValue.length;
     for (let a = 0; a < answers.length; a++) {
         for (let i = 0; i < answers[a].length; i++) {
@@ -1143,7 +1150,7 @@ hintButton.addEventListener("click", () => {
         score++;
     } else {
         if (inputLength > 0 && inputLength < currentAnswer.length + 1 && (inputValue == currentAnswer.substring(0, inputLength).toLowerCase())){
-            hint = input.value + currentAnswer[input.value.length];
+            hint = input.value + currentAnswer[inputLength];
         } else if (inputLength >= currentAnswer.length) {
             hint = currentAnswer.substring(0, index + 1);
             counter--;
@@ -1153,7 +1160,8 @@ hintButton.addEventListener("click", () => {
         input.value = hint;
         input.focus();
         counter++;
-        if (input.value.trim().toLowerCase() == currentAnswer.toLowerCase()) {
+        inputValue = hint.trim().replace(/\s+/g, " ").toLowerCase();
+        if (inputValue == currentAnswer.toLowerCase()) {
             input.style.color = '#008000';
             input.style.borderColor = '#008000';
             input.value = currentAnswer;
