@@ -947,7 +947,7 @@ let questions = [
     */
 ];
 
-const questionCounter = document.getElementById("question-counter")
+const questionCounter = document.getElementById("question-counter");
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btns");
 const checkButton = document.getElementById("check-btn");
@@ -1049,7 +1049,7 @@ nextButton.addEventListener("click", () => {
 });
 
 checkButton.addEventListener("click", () => {
-    index = 0;
+    let index = 0;
     let isCorrect = false;
     for (let i = 0; i < questions[currentQuestionIndex].answers.length; i++) {
         if (input.value.toLowerCase().trim().replace(/\s+/g, " ") == questions[currentQuestionIndex].answers[i].toLowerCase()) {
@@ -1086,7 +1086,7 @@ document.addEventListener("keyup", event => {
     if ((event.key === "t" || event.key === "1") && (input.style.display === "none" || input.style.display === "")) {
         answerButtons.children[0].click();
     } else if ((event.key === "f" || event.key === "2") && (input.style.display === "none" || input.style.display === "")) {
-        answerButtons.children[1].click()
+        answerButtons.children[1].click();
     } else if (event.key === "3" && (input.style.display === "none" || input.style.display === "")) {
         answerButtons.children[2].click();
     } else if (event.key === "4" && (input.style.display === "none" || input.style.display === "")) {
@@ -1133,7 +1133,7 @@ hintButton.addEventListener("click", () => {
                     answer = a;
                 }
             } else {
-                break
+                break;
             }
         }
     }
