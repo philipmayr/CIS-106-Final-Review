@@ -829,7 +829,7 @@ let questions = [
     },
     {
         question: "The result of splitting &quot;Hello world&quot; using &quot; &quot;.",
-        answers: ["[&quot;Hello&quot;, &quot;world&quot;]"]
+        answers: ["[Hello, world]"]
     },
     {
         question: "A data structure consisting of a collection of elements (values or variables), each identified by at least one index.",
