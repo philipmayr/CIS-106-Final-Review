@@ -828,7 +828,7 @@ let questions = [
         answers: ["close"]
     },
     {
-        question: "The result of splitting &quot;Hello world&quot; using &quot &quot.",
+        question: "The result of splitting &quot;Hello world&quot; using &quot; &quot;.",
         answers: ["[&quot;Hello&quot;, &quot;world&quot;]"]
     },
     {
